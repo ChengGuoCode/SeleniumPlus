@@ -1,0 +1,66 @@
+plugins {
+    id 'java'
+}
+
+group 'com.kungeek.seleniumplus'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven {
+        credentials {
+            url "https://nexus.kungeek.com/repository/kungeek-public/"
+            username "gradle"
+            password "d#84zsFtr8lz"
+        }
+    }
+    maven {url "https://maven.aliyun.com/repository/public"}
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    // selenium
+    compile "selenium:selenium-api:3.14.0"
+    compile "selenium:selenium-remote-driver:3.14.0"
+    compile "selenium:selenium-chrome-driver:3.14.0"
+    compile "selenium:selenium-firefox-driver:3.14.0"
+    compile "selenium:selenium-support:3.14.0"
+
+    // log
+    compile "log4j:log4j-api:2.11.0"
+    compile "log4j:log4j-core:2.11.0"
+    compile "log4j:log4j-slf4j-impl:2.11.0"
+    compile "slf4j:slf4j-api:1.7.25"
+    compile "slf4j:jul-to-slf4j:1.7.25"
+    compile "slf4j:jcl-over-slf4j:1.7.25"
+
+    // util
+    compile "apache-commons:commons-logging:1.2"
+    compile "apache-commons:commons-lang3:3.8"
+    compile "apache-commons:commons-lang:2.6"
+    compile "apache-commons:commons-pool2:2.4.2"
+    compile "apache-commons:commons-collections4:4.1"
+    compile "apache-commons:commons-collections:3.2.1"
+    compile "apache-commons:commons-beanutils:1.7.0"
+    compile "google:guava:25.1-jre"
+    
+    // spring
+    compile "springframework:spring-web:5.0.2.RELEASE"
+    compile "springframework:spring-core:5.0.2.RELEASE"
+    compile "springframework:spring-context:5.0.2.RELEASE"
+    compile "springframework:spring-beans:5.0.2.RELEASE"
+    compile "springframework:spring-tx:5.0.2.RELEASE"
+    
+    // redis
+    compile "springframework.data:spring-data-redis:2.0.2.RELEASE"
+    compile "redis.clients:jedis:2.9.0"
+    
+    // jackson
+    compile "jackson:jackson-core:2.12.0"
+    compile "jackson:jackson-databind:2.12.0"
+    compile "jackson:jackson-annotations:2.12.0"
+    compile "jackson:jackson-dataformat-yaml:2.12.0"
+    compile "dom4j:dom4j:2.0.0"
+}
